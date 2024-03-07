@@ -1,8 +1,14 @@
 package com.madsennessa.carprojectapp.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 @Table(name = "Car")
 public class Car {
 
