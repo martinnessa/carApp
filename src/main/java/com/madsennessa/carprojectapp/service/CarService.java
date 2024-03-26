@@ -23,4 +23,6 @@ public class CarService {
 
     public List<Car> getAllCarsPaginated(int pageNumber){return carRepository.findAll(PageRequest.of(pageNumber,20)).stream()
             .toList();}
+
+    public Car createCar(Car car){return carRepository.save(car);}
 }
