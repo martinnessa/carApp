@@ -18,6 +18,9 @@ public class CarController {
     @GetMapping("/{id}")
     public Car getCarById(@PathVariable Long id){return carService.getCarById(id);}
 
+    @GetMapping("/")
+    public List<Car> getAllCars(){return carService.getAllCars();}
+
     @GetMapping("/page/{pageNumber}")
     public List<Car> getAllCarsPaged(@PathVariable int pageNumber){return carService.getAllCarsPaginated(pageNumber);}
 

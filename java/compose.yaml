@@ -23,7 +23,7 @@ services:
     depends_on:
        db:
          condition: service_healthy
-   db:
+    db:
      image: postgres
      restart: always
      user: postgres
@@ -41,9 +41,9 @@ services:
        interval: 10s
        timeout: 5s
        retries: 5
- volumes:
+  volumes:
    db-data:
- secrets:
+  secrets:
    db-password:
      file: db/password.txt
 
