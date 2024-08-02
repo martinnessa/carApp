@@ -8,3 +8,6 @@ services:
 
     ports:
       - '5432:5432'
+
+    labels:
+      org.springframework.boot.jdbc.parameters: 'ssl=true&sslmode=require'
