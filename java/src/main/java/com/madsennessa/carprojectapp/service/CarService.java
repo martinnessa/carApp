@@ -10,19 +10,26 @@ import java.util.List;
 
 @Service
 public class CarService {
-    public final CarRepository carRepository;
+  public final CarRepository carRepository;
 
-    @Autowired
-    public CarService(CarRepository carRepository){
-        this.carRepository = carRepository;
-    }
+  @Autowired
+  public CarService(CarRepository carRepository) {
+    this.carRepository = carRepository;
+  }
 
-    public Car getCarById (Long id){ return carRepository.findById(id).orElse(null); }
+  public Car getCarById(Long id) {
+    return carRepository.findById(id).orElse(null);
+  }
 
-    public List<Car> getAllCars (){return carRepository.findAll();}
+  public List<Car> getAllCars() {
+    return carRepository.findAll();
+  }
 
-    public List<Car> getAllCarsPaginated(int pageNumber){return carRepository.findAll(PageRequest.of(pageNumber,20)).stream()
-            .toList();}
+  public List<Car> getAllCarsPaginated(int pageNumber) {
+    return carRepository.findAll(PageRequest.of(pageNumber, 20)).stream().toList();
+  }
 
-    public Car createCar(Car car){return carRepository.save(car);}
+  public Car createCar(Car car) {
+    return carRepository.save(car);
+  }
 }
