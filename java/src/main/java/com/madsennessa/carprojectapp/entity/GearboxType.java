@@ -1,6 +1,6 @@
 package com.madsennessa.carprojectapp.entity;
 
-public enum GearBoxType {
+public enum GearboxType {
     AUTOMATIC,
     MANUAL,
     UNDEFINED

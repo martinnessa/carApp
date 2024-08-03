@@ -10,42 +10,45 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Table(name = "Car")
-public class Car {
+public class
+Car {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "car_seq_gen", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "car_seq_gen", sequenceName = "car_seq", allocationSize = 1)
+    @Column (name = "car_id")
     private Long id;
 
-    @Column(name = "Make")
+    @Column (name = "make")
     private String make;
 
-    @Column (name = "Model")
+    @Column (name = "model")
     private String model;
 
-    @Column (name = "Year")
+    @Column (name = "year")
     private int year;
 
-    @Column (name = "RangeDriven")
-    private Long rangeDriven;
+    @Column (name = "range_driven")
+    private Long rangeDriven = 0L;
 
-    @Column (name = "ListedPrice")
-    private Long listedPrice;
+    @Column (name = "listed_price")
+    private Long listedPrice = 0L;
 
-    @Column (name = "PreviousOwners")
+    @Column (name = "previous_owner")
     private int previousOwners;
 
-    @Column (name = "RegistrationNumber")
+    @Column (name = "registration_number")
     private String registrationNumber;
 
-    @Column (name = "Color")
+    @Column (name = "color")
     private String color;
 
-    @Column (name = "Gearbox")
-    private GearBoxType gearBoxType;
+    @Column (name = "gearbox")
+    private GearboxType gearboxType;
 
-    @Column (name = "Drivetrain")
+    @Column (name = "drivetrain")
     private Drivetrain drivetrain;
 
-    @Column (name = "Fuel")
+    @Column (name = "fuel")
     private FuelType fuelType;
 }
